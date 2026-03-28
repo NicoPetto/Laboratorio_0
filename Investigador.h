@@ -13,12 +13,19 @@ private:
     string ORCID;
     string nombre;
     string institucion;
+    list <Publicacion*> publicaciones;
 public:
     Investigador();
     ~Investigador();
     Investigador(string ORCID, string nombre, string institucion);
     string toString();
+
+    string getNombre();
+
+    void addPublicacion(Publicacion * publicacion);
     string listarPublicaciones(DTFecha desde, string palabra);
+
+    string getNombre();
 
 };
 

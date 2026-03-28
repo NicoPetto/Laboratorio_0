@@ -5,6 +5,7 @@
 #ifndef LAB_0_DTREFER_H
 #define LAB_0_DTREFER_H
 #include "DTFecha.h"
+#include <set>
 
 
 class DTRefer {
@@ -12,14 +13,14 @@ private:
     string DOI;
     string titulo;
     DTFecha fecha;
-    string autores;
+    set<string> autores;
 
 public:
-    DTRefer(string DOI, string titulo, DTFecha fecha, string autores);
+    DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores);
     string getDOI();
     string getTitulo();
     DTFecha getFecha();
-    string getAutores();
+    set<string> getAutores();
 
 };
 

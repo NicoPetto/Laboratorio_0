@@ -11,20 +11,22 @@ using namespace std;
 #include "DTRefer.h"
 #include <list>
 #include "Investigador.h"
+
 class Publicacion {
 
 protected:
     string DOI;
     string titulo;
     DTFecha fecha;
-    list<Investigador *> Investigadores ;
+    list<Investigador *> investigadores;
 
 public:
     Publicacion();
     Publicacion(string DOI, string titulo, DTFecha fecha);
-    ~Publicacion(); //virtual
+    ~Publicacion();
     DTRefer getDT();
     virtual bool contienePalabra(string palabra);
+    void addInvestigador(Investigador * investigador);
 
 };
 
