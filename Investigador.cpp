@@ -27,7 +27,9 @@ string Investigador::toString() {
 
 string Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     bool b=false;
-    string final = " ";
+
+    set <string> final;
+
     //recorre la lisra de investigadores
     for (auto publicacion : this->publicaciones) {
         DTFecha a = publicacion->fecha;
@@ -37,7 +39,7 @@ string Investigador::listarPublicaciones(DTFecha desde, string palabra) {
 
             b=publicacion->contienePalabra(palabra);
             if (b==true) {
-                final = final + publicacion->getDOI();
+                final.insert(publicacion->getDOI());
             }
         }
     }

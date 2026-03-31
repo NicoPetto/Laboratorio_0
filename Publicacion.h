@@ -25,6 +25,7 @@ public:
     Publicacion(string DOI, string titulo, DTFecha fecha);
     ~Publicacion();
     DTRefer getDT();
+    string getDOI();
     virtual bool contienePalabra(string palabra);
     void addInvestigador(Investigador * investigador);
 
