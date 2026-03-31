@@ -25,8 +25,6 @@ public:
     void addPublicacion(Publicacion * publicacion);
     string listarPublicaciones(DTFecha desde, string palabra);
 
-    string getNombre();
-
 };
 
 
