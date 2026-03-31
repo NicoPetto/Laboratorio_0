@@ -16,7 +16,7 @@ Investigador::Investigador(string ORCID,string nombre,string institucion) {
     this->nombre = nombre;
     this->institucion = institucion;
 }
-~Investigador::Investigador() {
+Investigador::~Investigador() {
 cout<<"vorrado vovi";
 }
 
