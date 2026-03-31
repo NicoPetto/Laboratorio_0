@@ -17,7 +17,7 @@ Investigador::Investigador(string ORCID,string nombre,string institucion) {
     this->institucion = institucion;
 }
 ~Investigador::Investigador() {
-
+cout<<"vorrado vovi";
 }
 
 
