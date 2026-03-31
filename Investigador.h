@@ -19,6 +19,10 @@ public:
     ~Investigador();
     Investigador(string ORCID, string nombre, string institucion);
     string toString();
+
+    string getNombre();
+
+    void addPublicacion(Publicacion * publicacion);
     string listarPublicaciones(DTFecha desde, string palabra);
 
 };

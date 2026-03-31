@@ -15,6 +15,7 @@ private:
     int Mes;
     int Anio;
 public:
+    DTFecha();
     DTFecha(int Dia, int Mes, int Anio);
     int getDia();
     int getMes();
