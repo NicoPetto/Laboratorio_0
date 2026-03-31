@@ -13,6 +13,7 @@ private:
     string ORCID;
     string nombre;
     string institucion;
+    list <Publicacion*> publicaciones;
 public:
     Investigador();
     ~Investigador();
