@@ -24,6 +24,7 @@ public:
 
     void addPublicacion(Publicacion * publicacion);
     set<string> listarPublicaciones(DTFecha desde, string palabra);
+    void pruebas();
 
 };
 
