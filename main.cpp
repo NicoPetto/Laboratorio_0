@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
 
-cout<<"gila";
+cout<<"No se dicen malas palabras"; //editado por nico
 
     return 0;
 
