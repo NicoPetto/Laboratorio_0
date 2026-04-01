@@ -7,6 +7,8 @@
 #include <iostream>
 using namespace std;
 
+class Investigador;
+
 #include "DTFecha.h"
 #include "DTRefer.h"
 #include <list>
@@ -26,9 +28,8 @@ public:
     ~Publicacion();
     DTRefer getDT();
     string getDOI();
-    DTFecha getFecha();
-    virtual bool contienePalabra(string palabra);
-    void addInvestigador(Investigador * investigador);
+    virtual bool contienePalabra(string palabra) = 0; // es virtual y no precisa implementación
+    void addInvestigador(Investigador * investigador); //función de linkeo entre clases
 
 };
 
