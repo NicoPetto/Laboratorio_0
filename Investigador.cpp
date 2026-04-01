@@ -16,7 +16,7 @@ Investigador::Investigador(string ORCID,string nombre,string institucion) {
     this->nombre = nombre;
     this->institucion = institucion;
 }
-~Investigador::Investigador() {
+Investigador::~Investigador() {
 cout<<"vorrado vovi";
 }
 
@@ -25,19 +25,19 @@ string Investigador::toString() {
     return this->ORCID + "/" + this->institucion;
 }
 
-string Investigador::listarPublicaciones(DTFecha desde, string palabra) {
+set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     bool b=false;
-    string final = " ";
+    set<string> final;
     //recorre la lisra de investigadores
     for (auto publicacion : this->publicaciones) {
-        DTFecha a = publicacion->fecha;
+        DTFecha a = publicacion->getFecha();
         if ( desde.getAnio()>a.getAnio()
             || desde.getAnio()==a.getAnio()&&desde.getMes()>a.getMes()
             || desde.getAnio()==a.getAnio()&&desde.getMes()==a.getMes()&&desde.getDia()>a.getDia()) {
 
             b=publicacion->contienePalabra(palabra);
             if (b==true) {
-                final = final + publicacion->getDOI();
+                final.insert(publicacion->getDOI());
             }
         }
     }

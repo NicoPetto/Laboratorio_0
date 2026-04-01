@@ -23,7 +23,7 @@ public:
     string getNombre();
 
     void addPublicacion(Publicacion * publicacion);
-    string listarPublicaciones(DTFecha desde, string palabra);
+    set<string> listarPublicaciones(DTFecha desde, string palabra);
 
 };
 
