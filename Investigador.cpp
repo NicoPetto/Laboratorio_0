@@ -43,5 +43,8 @@ set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     }
     return final;
 }
-
+void Investigador::addPublicacion(Publicacion * publicacion) { //Por cuestiones de lógica, se establece que se linkea...
+    publicaciones.push_back(publicacion);                      //...primero la publicación al investigador
+    publicacion->addInvestigador(this);
+}
 
