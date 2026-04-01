@@ -23,6 +23,10 @@ string Publicacion::getDOI() {
     return this->DOI;
 }
 
+DTFecha Publicacion::getFecha() {
+    return this->fecha;
+}
+
 DTRefer Publicacion::getDT() {
     set<string> autores; //creo un "set" que no permite duplicados y los ordena
 

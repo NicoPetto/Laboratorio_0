@@ -27,6 +27,7 @@ public:
     Publicacion(string DOI, string titulo, DTFecha fecha);
     ~Publicacion();
     DTRefer getDT();
+    DTFecha getFecha();
     string getDOI();
     virtual bool contienePalabra(string palabra) = 0; // es virtual y no precisa implementación
     void addInvestigador(Investigador * investigador); //función de linkeo entre clases
