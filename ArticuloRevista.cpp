@@ -1,10 +1,11 @@
 //
-// Created by Nicolás on 27/3/2026.
+// Created by elize on 3/30/2026.
 //
-
 #include "ArticuloRevista.h"
+
+
 ArticuloRevista::~ArticuloRevista() {
-    cout<<"Articulo Revista: "<<this->revista<<" destruido"<<endl;
+cout<<"Articulo Revista: "<<this->revista<<" destruido"<<endl;
 }
 
 ArticuloRevista::ArticuloRevista(string DOI, string titulo, DTFecha fecha, string revista, string extracto)
@@ -12,5 +13,5 @@ ArticuloRevista::ArticuloRevista(string DOI, string titulo, DTFecha fecha, strin
 {}
 
 bool ArticuloRevista::contienePalabra(string palabra) {
-
+        return extracto.find(palabra) != string::npos;
 }
