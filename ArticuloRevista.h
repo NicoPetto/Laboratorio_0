@@ -13,7 +13,6 @@ public:
     ~ArticuloRevista() override;
     ArticuloRevista(string DOI, string titulo, DTFecha fecha, string revista, string extracto);
     bool contienePalabra(string palabra) override;
-    string getExtracto();
 protected:
 };
 
