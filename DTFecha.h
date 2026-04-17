@@ -17,10 +17,16 @@ private:
 public:
     DTFecha();
     DTFecha(int Dia, int Mes, int Anio);
-    int getDia();
-    int getMes();
-    int getAnio();
+    int getDia() const;
+    int getMes() const;
+    int getAnio() const;
+    friend ostream& operator<<(ostream& os, const DTFecha& f);
 };
+
+ostream& operator<<(ostream& os, const DTFecha& f) {
+    os << f.getDia() << "/" << f.getMes() << "/" << f.getAnio();
+    return os;
+}
 
 
 
