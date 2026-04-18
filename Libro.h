@@ -12,12 +12,11 @@ private:
     string editorial;
     string palabrasDestacadas;
 public:
-    Libro();
-    ~Libro();
-    Libro(string editorial, string palabrasDestacadas);
+    ~Libro() override;
+    Libro(string DOI, string titulo, DTFecha fecha, string editorial, string palabrasDestacadas);
     bool contienePalabra(string palabra) override;
-
 };
+
 
 
 

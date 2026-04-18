@@ -5,17 +5,18 @@
 #define LAB_0_ARTICULOREVISTA_H
 #include "Publicacion.h"
 
-
 class ArticuloRevista: public Publicacion{
 private:
-   string revista;
-   string extracto;
+    string revista;
+    string extracto;
 public:
-   ArticuloRevista();
-   ~ArticuloRevista();
-   ArticuloRevista(string revista, string extracto);
-   bool contienePalabra(string palabra) override;
+    ~ArticuloRevista() override;
+    ArticuloRevista(string DOI, string titulo, DTFecha fecha, string revista, string extracto);
+    bool contienePalabra(string palabra) override;
+protected:
 };
+
+
 
 
 

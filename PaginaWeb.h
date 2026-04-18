@@ -12,6 +12,8 @@ private:
     string url;
     string contenidoExtraido;
 public:
+    ~PaginaWeb() override;
+    PaginaWeb(string DOI, string titulo, DTFecha fecha, string url, string contenidoExtraido);
     bool contienePalabra(string palabra) override;
 };
 
