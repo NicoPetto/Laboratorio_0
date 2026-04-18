@@ -3,6 +3,7 @@
 //
 
 #include "Publicacion.h"
+#include "Investigador.h"
 
 
 Publicacion::Publicacion() {

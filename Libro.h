@@ -5,15 +5,16 @@
 #ifndef LAB_0_LIBRO_H
 #define LAB_0_LIBRO_H
 #include "Publicacion.h"
+using namespace std;
 
 
 class Libro:public Publicacion {
 private:
     string editorial;
-    string palabrasDestacadas;
+    set<string> palabrasDestacadas;
 public:
     ~Libro() override;
-    Libro(string DOI, string titulo, DTFecha fecha, string editorial, string palabrasDestacadas);
+    Libro(string DOI, string titulo, DTFecha fecha, string editorial, set<string> palabrasDestacadas);
     bool contienePalabra(string palabra) override;
 };
 

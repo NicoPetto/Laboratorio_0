@@ -23,11 +23,6 @@ public:
     friend ostream& operator<<(ostream& os, const DTFecha& f);
 };
 
-ostream& operator<<(ostream& os, const DTFecha& f) {
-    os << f.getDia() << "/" << f.getMes() << "/" << f.getAnio();
-    return os;
-}
-
 
 
 #endif //LAB_0_DTFECHA_H

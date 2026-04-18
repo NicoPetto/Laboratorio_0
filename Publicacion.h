@@ -11,8 +11,9 @@ class Investigador;
 
 #include "DTFecha.h"
 #include "DTRefer.h"
+#include <string>
 #include <list>
-#include "Investigador.h"
+using namespace std;
 
 class Publicacion {
 
@@ -25,7 +26,7 @@ protected:
 public:
     Publicacion();
     Publicacion(string DOI, string titulo, DTFecha fecha);
-    ~Publicacion();
+    virtual ~Publicacion();
     DTRefer getDT();
     DTFecha getFecha();
     string getDOI();

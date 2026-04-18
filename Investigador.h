@@ -5,8 +5,14 @@
 #ifndef LAB_0_INVESTIGADOR_H
 #define LAB_0_INVESTIGADOR_H
 
-#include "Publicacion.h"
+#include <string>
+#include <list>
+#include <set>
+using namespace std;
 
+#include "DTFecha.h"
+
+class Publicacion;
 
 class Investigador {
 private:

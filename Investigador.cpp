@@ -3,6 +3,8 @@
 //
 
 #include "Investigador.h"
+#include "Publicacion.h"
+
 /*La operación listarPublicaciones(desde: DTFecha, palabra: String)
 de la clase Investigador obtiene el identificador de todas sus publicaciones que
 contengan la palabra indicada y cuya fecha sea posterior al parámetro desde. Para ello, se
@@ -19,7 +21,6 @@ Investigador::Investigador(string ORCID,string nombre,string institucion) {
 Investigador::~Investigador() {
 cout<<"vorrado vovi";
 }
-
 
 string Investigador::toString() {
     return this->ORCID + "/" + this->institucion;
@@ -48,3 +49,6 @@ void Investigador::addPublicacion(Publicacion * publicacion) { //Por cuestiones 
     publicacion->addInvestigador(this);
 }
 
+string Investigador::getNombre() {
+    return this->nombre;
+}

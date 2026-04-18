@@ -9,15 +9,29 @@
 DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores)
     : DOI(DOI), titulo(titulo), fecha(fecha), autores(autores)
 {}
-string DTRefer:: getDOI() {
+string DTRefer:: getDOI() const {
 return this->DOI;
 }
-string DTRefer::getTitulo() {
+string DTRefer::getTitulo() const {
 return this->titulo;
 }
-DTFecha DTRefer:: getFecha() {
+DTFecha DTRefer:: getFecha() const {
     return this->fecha;
 }
-set<string> DTRefer::getAutores() {
+set<string> DTRefer::getAutores() const {
 return this->autores;
+}
+
+ostream& operator<<(ostream& os, const DTRefer& dt) {
+
+    os << dt.getDOI() << "->" << dt.getTitulo() << "(" << dt.getFecha() << ")/";
+    set<string> autores = dt.getAutores();
+    for (auto it = autores.begin(); it != autores.end(); ++it) {
+        os << *it;
+        if (next(it) != autores.end()) {
+            os << ",";
+        }
+    }
+
+    return os;
 }
