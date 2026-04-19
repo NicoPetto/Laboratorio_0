@@ -23,15 +23,19 @@ return this->autores;
 }
 
 ostream& operator<<(ostream& os, const DTRefer& dt) {
-
     os << dt.getDOI() << "->" << dt.getTitulo() << "(" << dt.getFecha() << ")/";
     set<string> autores = dt.getAutores();
-    for (auto it = autores.begin(); it != autores.end(); ++it) {
-        os << *it;
-        if (next(it) != autores.end()) {
-            os << ",";
+    if (autores.size() == 0) {
+            cout << "No hay autores asociados";
+    } else {
+       for (auto it = autores.begin(); it != autores.end(); ++it) {
+            os << *it;
+            if (next(it) != autores.end()) {
+                os << ",";
+            }
         }
     }
+
 
     return os;
 }

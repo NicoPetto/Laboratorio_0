@@ -29,12 +29,12 @@ string Investigador::toString() {
 set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     bool b=false;
     set<string> final;
-    //recorre la lisra de investigadores
+    //recorre la lista de investigadores
     for (auto publicacion : this->publicaciones) {
         DTFecha a = publicacion->getFecha();
         if ( a.getAnio() > desde.getAnio()
-           || (a.getAnio() == desde.getAnio() && a.getMes() > desde.getMes())
-           || (a.getAnio() == desde.getAnio() && a.getMes() == desde.getMes() && a.getDia() >= desde.getDia()) ) {
+            || (a.getAnio() == desde.getAnio() && a.getMes() > desde.getMes())
+            || (a.getAnio() == desde.getAnio() && a.getMes() == desde.getMes() && a.getDia() > desde.getDia()) ) {
 
             b=publicacion->contienePalabra(palabra);
             if (b==true) {
@@ -44,6 +44,7 @@ set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     }
     return final;
 }
+
 void Investigador::addPublicacion(Publicacion * publicacion) { //Por cuestiones de lógica, se establece que se linkea...
     publicaciones.push_back(publicacion);                      //...primero la publicación al investigador
     publicacion->addInvestigador(this);
