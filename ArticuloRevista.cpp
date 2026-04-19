@@ -5,7 +5,10 @@
 
 
 ArticuloRevista::~ArticuloRevista() {
-cout<<"Articulo Revista: "<<this->revista<<" destruido"<<endl;
+
+    
+    cout<<"Articulo Revista: "<<this->revista<<" destruido"<<endl;
+
 }
 
 

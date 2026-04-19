@@ -33,11 +33,13 @@ int main() {
     cout << l2->getDT() << endl;
     cout << w1->getDT() << endl;
 
+    cout << endl << endl;
+
     Investigador * i1 = new Investigador("0000-0003-1234-5678", "Carla Oliveri", "Universidad de la República");
     Investigador * i2 = new Investigador("0000-0001-8765-4321", "Alberto Santos", "Instituto Tecnico");
 
-    i1->toString();
-    i2->toString();
+    cout << i1->toString() << endl;
+    cout << i2->toString() << endl;
 
     cout << endl << endl;
 
@@ -52,11 +54,34 @@ int main() {
     cout << endl << endl;
 
     DTFecha fechaH(10,12,2023);
-    set <string> listado1 = i1->listarPublicaciones(fechaH, "UML");
+    set <string> listadoH = i1->listarPublicaciones(fechaH, "UML");
     cout << "Publicaciones encontradas posteriores a " << fechaH << " hechas por " << i1->getNombre() << endl;
-    for (const string& doi : listado1) {
+    for (const string& doi : listadoH) {
         cout << doi << endl;
     }
+
+    cout << endl << endl;
+
+    i1->removePublicacion(a2);
+    i2->removePublicacion(a2);
+    delete a2;
+    a2 = nullptr;
+
+    cout << endl << endl;
+
+    DTFecha fechaJ(1,1,2020);
+    set <string> listadoJ = i1->listarPublicaciones(fechaJ, "UML");
+    cout << "Publicaciones encontradas posteriores a " << fechaJ << " hechas por " << i1->getNombre() << endl;
+    for (const string& doi : listadoJ) {
+        cout << doi << endl;
+    }
+
+    cout << endl << endl;
+
+    cout << a1->getDT() << endl;
+    cout << l1->getDT() << endl;
+    cout << l2->getDT() << endl;
+    cout << w1->getDT() << endl;
 
     return 0;
 

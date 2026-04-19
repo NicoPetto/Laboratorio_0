@@ -19,7 +19,7 @@ private:
     string ORCID;
     string nombre;
     string institucion;
-    list <Publicacion*> publicaciones;
+    set <Publicacion*> publicaciones;
 public:
     Investigador();
     ~Investigador();
@@ -31,6 +31,7 @@ public:
     void addPublicacion(Publicacion * publicacion);
     set<string> listarPublicaciones(DTFecha desde, string palabra);
     void pruebas();
+    void removePublicacion(Publicacion* p);
 
 };
 

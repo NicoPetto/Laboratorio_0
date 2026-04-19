@@ -21,7 +21,7 @@ protected:
     string DOI;
     string titulo;
     DTFecha fecha;
-    list<Investigador *> investigadores;
+    set<Investigador *> investigadores;
 
 public:
     Publicacion();

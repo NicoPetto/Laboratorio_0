@@ -19,7 +19,7 @@ Investigador::Investigador(string ORCID,string nombre,string institucion) {
     this->institucion = institucion;
 }
 Investigador::~Investigador() {
-cout<<"vorrado vovi";
+
 }
 
 string Investigador::toString() {
@@ -46,9 +46,16 @@ set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
 }
 
 void Investigador::addPublicacion(Publicacion * publicacion) { //Por cuestiones de lógica, se establece que se linkea...
-    publicaciones.push_back(publicacion);                      //...primero la publicación al investigador
+    publicaciones.insert(publicacion);                      //...primero la publicación al investigador
     publicacion->addInvestigador(this);
     cout << "Se agregó la publicacion con DOI " << publicacion->getDOI() << " al investigador " << getNombre() << endl;
+}
+
+void Investigador::removePublicacion(Publicacion* p) {
+    auto it = publicaciones.find(p);
+    if (it != publicaciones.end()) {
+        publicaciones.erase(it);
+    }
 }
 
 string Investigador::getNombre() {

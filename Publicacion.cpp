@@ -39,5 +39,5 @@ DTRefer Publicacion::getDT() {
 }
 
 void Publicacion::addInvestigador(Investigador * investigador) {
-    investigadores.push_back(investigador);
+    investigadores.insert(investigador);
 }
