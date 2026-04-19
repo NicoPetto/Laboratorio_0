@@ -8,9 +8,13 @@ ArticuloRevista::~ArticuloRevista() {
 cout<<"Articulo Revista: "<<this->revista<<" destruido"<<endl;
 }
 
+
 ArticuloRevista::ArticuloRevista(string DOI, string titulo, DTFecha fecha, string revista, string extracto)
-: Publicacion(DOI, titulo, fecha), revista(revista), extracto(extracto)
-{}
+    : Publicacion(DOI, titulo, fecha)
+{
+        this->revista = revista;
+        this->extracto = extracto;
+}
 
 bool ArticuloRevista::contienePalabra(string palabra) {
         return extracto.find(palabra) != string::npos;

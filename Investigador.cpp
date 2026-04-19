@@ -32,9 +32,9 @@ set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
     //recorre la lisra de investigadores
     for (auto publicacion : this->publicaciones) {
         DTFecha a = publicacion->getFecha();
-        if ( desde.getAnio()>a.getAnio()
-            || desde.getAnio()==a.getAnio()&&desde.getMes()>a.getMes()
-            || desde.getAnio()==a.getAnio()&&desde.getMes()==a.getMes()&&desde.getDia()>a.getDia()) {
+        if ( a.getAnio() > desde.getAnio()
+           || (a.getAnio() == desde.getAnio() && a.getMes() > desde.getMes())
+           || (a.getAnio() == desde.getAnio() && a.getMes() == desde.getMes() && a.getDia() >= desde.getDia()) ) {
 
             b=publicacion->contienePalabra(palabra);
             if (b==true) {
@@ -47,6 +47,7 @@ set<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
 void Investigador::addPublicacion(Publicacion * publicacion) { //Por cuestiones de lógica, se establece que se linkea...
     publicaciones.push_back(publicacion);                      //...primero la publicación al investigador
     publicacion->addInvestigador(this);
+    cout << "Se agregó la publicacion con DOI " << publicacion->getDOI() << " al investigador " << getNombre() << endl;
 }
 
 string Investigador::getNombre() {
